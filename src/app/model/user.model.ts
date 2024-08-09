@@ -23,3 +23,8 @@ export interface registerconfirm {
         refreshToken: string;
         userRole: string;
     }
+
+    export interface menu {
+        code: string;
+        name: string;
+    }
