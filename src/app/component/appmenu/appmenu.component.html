@@ -7,15 +7,14 @@
             <span>Access Management system</span>
             <span class="example-spacer"></span>
             <span>{{Loginuser}}</span>
-            <button mat-button [matMenuTriggerFor]="profile" class="mat-btn"><mat-icon>arrow_drop_down</mat-icon></button>
+            <button mat-button [matMenuTriggerFor]="profile"><mat-icon>arrow_drop_down</mat-icon></button>
             <mat-menu #profile>
                 <button mat-menu-item>Userprofile</button>
                 <button mat-menu-item routerLink="/resetpassword">Resetpassword</button>
                 <button mat-menu-item routerLink="/login">Logout</button>
             </mat-menu>
-          
+    
         </mat-toolbar>
-       
         <mat-drawer-container autosize>
             <mat-drawer #drawer opened="true" mode="side" position="start">
     
@@ -32,12 +31,14 @@
     
             </mat-drawer>
             <mat-drawer-content>
-                <div style="text-align: center;min-height: 900px;">
+                <div style="text-align: center;min-height: 600px;">
                     <router-outlet></router-outlet>
                 </div>
             </mat-drawer-content>
     
         </mat-drawer-container>
+    
+    
     </div>
 }@else{
     <div style="text-align: center;min-height: 600px;">

@@ -28,3 +28,9 @@ export interface registerconfirm {
         code: string;
         name: string;
     }
+
+    export interface resetpassword {
+        username: string;
+        oldpassword: string;
+        newpassword: string;
+    }

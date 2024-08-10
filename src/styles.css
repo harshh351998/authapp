@@ -34,7 +34,7 @@ mat-card {
     margin: 2%;
 }
 .example-spacer{
-    margin-right: 73%;
+    flex: 1 1 auto;
 }
 .mat-btn{
     margin-right: 40%;
