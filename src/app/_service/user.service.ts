@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { loginresp, menu, registerconfirm, resetpassword, usercred, userregister } from '../model/user.model';
+import { loginresp, menu, registerconfirm, resetpassword, updatepassword, usercred, userregister } from '../model/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -52,5 +52,13 @@ export class UserService {
 
   Forgetpassword(username: string) {
     return this.http.get(this.baseUrl + 'User/forgetpassword?username=' + username)
+  }
+
+  Updatepassword(_data: updatepassword) {
+    let params = new HttpParams()
+    .set('otptext', _data.otptext.toString())
+    .set('password', _data.password)
+    .set('username', _data.username);
+    return this.http.post(this.baseUrl + 'User/updatepassword',null,{params:params} );
   }
 }
